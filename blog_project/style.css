@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "Inconsolata", monospace, "PT Serif", serif;
+  background: #d5e6f5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img:hover {
+  /* silik yazar */
+  /* opacity: 0.6; */
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.line-clamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp8 {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* header */
+
+header {
+  background-image: url(img/resim6.jpg);
+  background-size: cover;
+  background-position: 25% 50%;
+  height: 54rem;
+  z-index: -1;
+  opacity: 1;
+  padding-top: 21rem;
+}
+
+#header_h1,
+#header_p1 {
+  /* background: rgb(149, 200, 251); */
+  color: black;
+  opacity: 1;
+}
+
+/* main */
+
+.left_side {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.left_side .card-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.left_side .card-text {
+  text-align: justify;
+  text-indent: 1rem;
+}
+
+.left_side img {
+  height: auto;
+}
+
+#visited_hit ul li {
+  box-shadow: 1px 1px 4px 1px rgba(141, 43, 43, 0.4);
+  color: black;
+  margin-top: 0.5rem;
+}
+
+#visited_hit ul li:hover {
+  box-shadow: 1px 1px 4px 1px rgba(238, 199, 193, 0.3);
+}
+
+#tag_cloud .card-body a {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.8);
+  padding: 0.2rem 0.2rem;
+}
+
+#tag_cloud .card-body a:hover {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.9);
+}
+
+footer {
+  min-height: 20rem;
+  width: auto;
+  background: rgb(231, 176, 176);
+  color: white;
+}
+
+#soc_network {
+  color: rgb(216, 135, 135);
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog Project</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- google-font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&family=PT+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- external css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Jquery ui  and js    -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <!-- start codes -->
+
+    <!-- nav start codes -->
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+      <!-- container-fuild -->
+      <div class="container">
+        <a class="navbar-brand text-uppercase" href="index.html">logo</a>
+        <button
+          style="display: none61"
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Anasayfa<span class="visually-hidden">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hakkımızda</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fa fa-user"></i>Üye
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a
+                  class="dropdown-item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#register"
+                  href="#"
+                  >Üye Ol</a
+                >
+                <a
+                  class="dropdown-item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#register2"
+                  href="#"
+                  >Üye Girişi</a
+                >
+              </div>
+            </li>
+          </ul>
+          <form class="d-flex my-2 my-lg-0">
+            <input
+              class="form-control me-sm-2"
+              type="text"
+              placeholder="arama motoru"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Arama
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- modal start register -->
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Üye Ol</h5>
+            <button
+              type="button"
+              class="btn-close btn-danger"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="index.html">
+              <div class="form-control">
+                <label for="name_surname">Ad-Soyad:</label>
+                <input
+                  type="text"
+                  id="name_surname"
+                  name="name_surname"
+                  class="form-control"
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="form-control">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label for="password">Şifre:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label for="re-password">Şifre tekrarı:</label>
+                <input
+                  type="password"
+                  id="re-password"
+                  name="re-password"
+                  class="re-password"
+                  required
+                />
+              </div>
+              <div class="mt-3">
+                <input
+                  type="reset"
+                  class="btn btn-danger text-uppercase"
+                  value="temizle"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-primary text-uppercase"
+                  value="gönder"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+            <button type="button" class="btn btn-primary">Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="register2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Üye Girişi</h5>
+            <button
+              type="button"
+              class="btn-close btn-danger"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="index.html">
+              <div class="form-control">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="form-control">
+                <label for="password">Şifre:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label for="re-password">Şifre tekrarı:</label>
+                <input
+                  type="password"
+                  id="re-password"
+                  name="re-password"
+                  class="re-password"
+                  required
+                />
+              </div>
+              <div class="mt-3">
+                <input
+                  type="reset"
+                  class="btn btn-danger text-uppercase"
+                  value="temizle"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-primary text-uppercase"
+                  value="gönder"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Kapat
+            </button>
+            <button type="button" class="btn btn-primary">Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal ends codes -->
+    <!-- nav ends codes -->
+    <!-- header start codes -->
+    <header>
+      <div class="jumbotron">
+        <div class="container">
+          <h1 id="header_h1" class="display-1 text-center text-uppercase">
+            Blog Sayfam
+          </h1>
+          <p id="header_p1" class="text-capitalize text-center">
+            Trabzon Cennetine Hoşgeldiniz...
+          </p>
+        </div>
+      </div>
+    </header>
+    <br />
+    <!-- header ends codes -->
+
+    <!-- main start codes -->
+    <main>
+      <div class="container-fuild">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-8">
+            <!-- Sol Taraf -->
+            <div class="card left_side">
+              <img class="card-img-top" src="img/resim1.JPG" alt="resim yok" />
+              <div class="card-body">
+                <h4 class="card-title text-capitalize">
+                  trabzon tonya melikşah köyü
+                </h4>
+                <p class="card-text line-clamp2">
+                  Melikşah köyü, Trabzon şehrinin Tonya ilçesinde yer alan bir
+                  yerleşim yeridir.
+                </p>
+              </div>
+              <div class="card-footer">14 Mart 2022</div>
+            </div>
+
+            <div class="card left_side">
+              <img class="card-img-top" src="img/resim12.jpg" alt="resim yok" />
+              <div class="card-body">
+                <h4 class="card-title text-capitalize">
+                  trabzon tonya canikdere şelalesi
+                </h4>
+                <p class="card-text line-clamp3">
+                  Canikdere Şelalesi, Trabzon şehrinin Tonya ilçesinde yer alan
+                  bir şelaledir.
+                </p>
+              </div>
+              <div class="card-footer">14 Mart 2022</div>
+            </div>
+
+            <div class="card left_side">
+              <img class="card-img-top" src="img/resim10.jpg" alt="resim yok" />
+              <div class="card-body">
+                <h4 class="card-title text-capitalize">
+                  trabzon beypınarı yaylası
+                </h4>
+                <p class="card-text line-clamp4">
+                  Beypınarı Yaylası, Trabzon şehrinin yükseklerinde bulunan bir
+                  yaylasıdır. Turistik gezilebilecek içinde bir çok yaylası
+                  vardır. Beypınarı Yaylası, Trabzon şehrinin yükseklerinde
+                  bulunan bir yaylasıdır. Turistik gezilebilecek içinde bir çok
+                  yaylası vardır.Beypınarı Yaylası, Trabzon şehrinin
+                  yükseklerinde bulunan bir yaylasıdır. Turistik gezilebilecek
+                  içinde bir çok yaylası vardır.Beypınarı Yaylası, Trabzon
+                  şehrinin yükseklerinde bulunan bir yaylasıdır. Turistik
+                  gezilebilecek içinde bir çok yaylası vardır.Beypınarı Yaylası,
+                  Trabzon şehrinin yükseklerinde bulunan bir yaylasıdır.
+                  Turistik gezilebilecek içinde bir çok yaylası vardır.Beypınarı
+                  Yaylası, Trabzon şehrinin yükseklerinde bulunan bir
+                  yaylasıdır. Turistik gezilebilecek içinde bir çok yaylası
+                  vardır.
+                </p>
+              </div>
+              <div class="card-footer">14 Mart 2022</div>
+            </div>
+
+            <div class="card left_side">
+              <img class="card-img-top" src="img/resim4.jpg" alt="resim yok" />
+              <div class="card-body">
+                <h4 class="card-title text-capitalize">yayla mantarı</h4>
+                <p class="card-text line-clamp5">
+                  Beypınarı yaylasında bulunan dağlarda yetişen mantardır.
+                </p>
+              </div>
+              <div class="card-footer">14 Mart 2022</div>
+            </div>
+
+            <div class="card left_side">
+              <img class="card-img-top" src="img/resim13.jpg" alt="resim yok" />
+              <div class="card-body">
+                <h4 class="card-title text-capitalize">
+                  trabzon tonya karşular mahallesi
+                </h4>
+                <p class="card-text line-clamp8">
+                  Karşular Mahallesi, Trabzon şehrinin Tonya ilçesinde yüksek
+                  bölgesinde yer alan bir yerleşim yeridir.
+                </p>
+              </div>
+              <div class="card-footer">14 Mart 2022</div>
+            </div>
+          </div>
+          <!-- sağ taraf -->
+          <div class="col-md-3 mt-3">
+            <!-- search -->
+            <div class="card" style="background: #9abde0">
+              <div class="card-body">
+                <h4 class="card-title text-uppercase">arama</h4>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Arama..."
+                />
+              </div>
+            </div>
+
+            <!-- en çok ziyaret edilen sayfalar -->
+            <div class="card mt-3" style="background: #9abde0">
+              <div class="card-header">
+                <h5
+                  class="text-center text-capitalize text-uppercase text-black"
+                >
+                  en çok ziyaret edilen sayfalar
+                </h5>
+              </div>
+              <div class="card-body" id="visited_hit">
+                <ul>
+                  <li>
+                    <a href="#" class="text-capitalize"
+                      >trabzon tonya melikşah köyü</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-capitalize"
+                      >trabzon tonya canikdere şelalesi</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-capitalize"
+                      >trabzon beypınarı yaylası</a
+                    >
+                  </li>
+                  <li><a href="#" class="text-capitalize">yayla mantarı</a></li>
+                  <li>
+                    <a href="#" class="text capitalize"
+                      >trabzon tonya karşular mahallesi</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="card-footer text-muted">Footer</div>
+            </div>
+            <!-- tag cloud -->
+            <div class="card mt-3" style="background: #9abde0" id="tag_cloud">
+              <div class="card-header">
+                <h5
+                  class="text-center text-uppercase text-capitalize text-black"
+                >
+                  Etiket Bulutu
+                </h5>
+              </div>
+              <div class="card-body">
+                <a href="#">Trabzon</a>
+                <a href="#">Tonya</a>
+                <a href="#">Melikşah Köyü</a>
+                <br />
+                <a href="#">Beypınarı Yaylası</a>
+                <a href="#">Yayla Mantarı</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- main ends codes -->
+
+    <!-- footer start codes -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 bg-primary">
+            <address>
+              mail: <a href="mailto:handangnn@gmail.com">Mail</a>Turkey
+            </address>
+            <ul id="soc_network">
+              <li id="soc_network1">Facebook</li>
+              <li id="soc_network2">Linkedin</li>
+              <li id="soc_network3">Instagram</li>
+            </ul>
+          </div>
+          <div class="col-md-6 bg-danger"></div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer ends codes -->
+
+    <!-- ends codes -->
+    <!-- Bootstrap JavaScript Libraries -->
+    <!-- Bu kısım en altta kalmalı yukarıda sıkıntı çıkarabilir -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
