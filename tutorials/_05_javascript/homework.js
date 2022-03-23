@@ -72,7 +72,7 @@ oluşan hataları nokta atışı tespit edebiliriz.
 // JS String metotlara çalışmak 
 
 // JS split() nedir? ne için kullanıyoruz?
-// Karakter dizisini belirtilen karakterden parçalara ayırarak bir dizi oluşturur.
+// Karakter dizisini(stringi) belirtilen karakterden parçalara ayırarak bir dizi oluşturur.
 
 // console.log(kelime.join()) ?
 /* Join() metodu bir array içerisinde yer alan bütün elemanları birleştirerek string bir
@@ -200,5 +200,315 @@ ifade olarak geri döndürür. Varsayılan olarak dizi öğeleri string ile ayr�
 // }
 // tekCift();
 
+///////////// ÖDEV3 /////////////////
+// 1- S.O.L.I.D nedir?
+//    Solid yapısı nedir?
+//    Solid yapısı neden kullanılır?
+//    Solid yapısına bir örnek verin.
+// Her yazılımcının bilmesi gereken S.O.L.I.D. yazılım geliştirmenin
+// temel prensipleri olarak kabul edilmektedir. SOLID yazılım prensipleri;
+// geliştirilen yazılımın esnek, yeniden kullanılabilir, sürdürülebilir ve
+// anlaşılır olmasını sağlayan, kod tekrarını önleyen ve Robert C. Martin 
+// tarafından öne sürülen prensipler bütünüdür. Kısaltması Michael Feathers
+// tarafından tanımlanan bu prensiplerin amacı;
+// ► Geliştirdiğimiz yazılımın gelecekte gereksinimlere kolayca adapte olması,
+// ► Yeni özellikleri kodda bir değişikliğe gerek kalmadan kolayca ekleyebileceğimiz,
+// ► Yeni gereksinimlere karşın kodun üzerinde en az değişimi sağlaması,
+// ► Kod üzerinde sürekli düzeltme hatta yeniden yazma gibi sorunların yol açtığı zaman
+//   kaybını da minimuma indirmektir.
+// Bu prensipler uygulanarak uygulamalarımızın büyürken, karmaşıklığın da büyümesinin
+// önüne geçmiş oluruz. “İyi kod” yazmak için bu prensiplere uygun yazılım geliştirmelisiniz.
+// S-Single-responsibility principle(Tek sorumluluk prensibi)
+// O-Open-closed principle(Açık-kapalı prensibi)
+// L-Liskov substitution principle(Liskov yer değiştirme prensibi)
+// I-Interface segregation principle(Arayüz ayırma prensibi)
+// D-Dependency Inversion Principle(Bağımlılığı tersine çevirme prensibi)
+
+// S(Single-responsibility principle): Bir sınıf (nesne) yalnızca bir amaç uğruna 
+// değiştirilebilir, o da o sınıfa yüklenen sorumluluktur, yani bir sınıfın(fonksiyona da
+// indirgenebilir) yapması gereken yalnızca bir işi olması gerekir.
+// https://gokhana.medium.com/single-responsibility-prensibi-nedir-kod-%C3%B6rne%C4%9Fiyle-soli%CC%87d-c8b1602be602
+
+// O(Open-closed principle): Bir sınıf ya da fonksiyon halihazırda var olan özellikleri
+// korumalı ve değişikliğe izin vermemelidir. Yani davranışını değiştirmiyor 
+// olmalı ve yeni özellikler kazanabiliyor olmalıdır.
+// https://gokhana.medium.com/open-closed-prensibi-nedir-kod-%C3%B6rne%C4%9Fiyle-soli%CC%87d-679619d5376a
+
+// L(Liskov substitution principle): Kodlarımızda herhangi bir değişiklik yapmaya gerek 
+// duymadan alt sınıfları, türedikleri(üst) sınıfların yerine kullanabilmeliyiz.
+// https://gokhana.medium.com/liskov-substitution-prensibi-nedir-kod-%C3%B6rne%C4%9Fiyle-soli%CC%87d-3cfc1cd63c1a
+
+//  I(Interface segregation principle): Sorumlulukların hepsini tek bir arayüze toplamak
+// yerine daha özelleştirilmiş birden fazla arayüz oluşturmalıyız. Yani her farklı sorumluluğun
+// kendine özgü bir arayüzü olması gerekmektedir. Böylece interface’i kullanan kişide sadece
+// ihtiyacı olanlarla ilgilenmiş olur.
+// https://gokhana.medium.com/interface-segregation-prensibi-nedir-kod-%C3%B6rne%C4%9Fiyle-soli%CC%87d-ac0fd6812ecf
+
+// D(Dependency Inversion Principle): Sınıflar arası bağımlılıklar olabildiğince az olmalıdır 
+// özellikle üst seviye sınıflar alt seviye sınıflara bağımlı olmamalıdır. Bir sınıfın, metodun
+// ya da özelliğin, onu kullanan diğer sınıflara karşı olan bağımlılığı en aza indirgenmelidir.
+// Bir alt sınıfta yapılan değişiklikler üst sınıfları etkilememelidir. Yüksek seviye sınıflarda
+// bir davranış değiştiğinde, alt seviye davranışların bu değişime uyum sağlaması gerekir. Ancak,
+// düşük seviye sınıflarda bir davranış değiştiğinde, üst seviye sınıfların davranışında bir
+// bozulma meydana gelmemelidir. Dependency Inversion, yani üst sınıflar, alt seviyeli sınıflara
+// bağlı olmamalı, çözüm ise her ikisi de soyut kavramlar üzerinden yönetilebilmelidir. Yüksek
+// seviye ve düşük seviye sınıflar arasında bir soyutlama katmanı oluşturabiliriz.
+// Üst Seviye Sınıflar -> Soyutlama Katmanı -> Düşük Seviye Sınıfları
+// https://gokhana.medium.com/dependency-inversion-prensibi-nedir-kod-%C3%B6rne%C4%9Fiyle-soli%CC%87d-b61296523565
+
+// 2- D : bu kısmı slayt yap.
+
+// 3- Design Pattern(Tasarım Modeli) nedir?
+// Design Pattern, yazılım geliştiricilerinin yazılım geliştirirken karşılaştıkları sorunların
+// genel çözümleridir. Yazılım tasarımında ortaya çıkan yaygın sorunlara karşı en basit ve en
+// efektif biçimde yeniden kullanılabilir çözümler sağlar.
+// Temelleri 1970 yılında ilk olarak mimarlar tarafından atılan, 1994 senesinde Dörtlü Çete
+// (Gang of Four) tarafından yayınlanan kitap ile popülarite kazanarak design patterns 
+// yazılımda kullanılmasında dönüm noktası olmuştur. Dörtlü Çete kitaplarında da 23 adet
+// Design Patterns’i konu almıştır.
+// Ancak bu sayı günümüzde çok daha fazladır. Proje geliştirirken kendi design patternizi
+// oluşturabilir ve kendi çözümünüzü bulabilirsiniz. Ancak var olan çözümleri bilip uygun
+// olan yerde kullanmak sizin için en doğrusu olacaktır. Tasarım yaparken bir problem ortaya
+// çıkarsa, hangi yolu kullanarak çözebilirim diye düşünülmeli, ve uygun pattern(kalıp) bulunmalıdır.
+// ► Bilinen problemler için genel bir çözümdür ancak ihtiyaçlarınıza göre uyarlanmıştır. Belirli bir
+// soruna bağlı olmayan bir biçimde belgelenmiş genel çözümler sağlar.
+// ► Kanıtlanmış çözümlerdir.
+// ► Etkileyicidirler ve işlerin bakımını kolaylaştırırlar.
+// ► Birçok geliştirici Design Patterns'a aşina olduğu için bunun bir tür geliştirme standardı olduğunu
+// söyleyebiliriz.
+// ► Design patterns, genelde Nesne Tabanlı Programlama (Object Oriented Programming) için kullanıldığı
+// düşünülüyor olsa da dilden ve programlama paradigmalarından bağımsızdır. 
+// Yani farklı bir paradigma için de çözümler üretilebilir. Belirli bir tasarımı
+// projede kullanmak istediğiniz dilde kolaylıkla uygulayabilirsiniz.
+// Design patterns, doğrudan koda dönüştürülebilen bitmiş bir tasarım değildir. 
+// Birçok farklı durumda kullanılabilecek bir sorunun nasıl çözüleceğine ilişkin
+// bir açıklama veya şablondur. 
+// Design Pattern'e Neden İhtiyaç Duyarız?
+// -Design Patterns, test edilmiş, kanıtlanmış geliştirme paradigmaları
+// sağlayarak geliştirme sürecini hızlandırabilir.
+// -Kodunuzu, daha basit tutmak gerektiğinde kodu daha anlamlı ve daha
+// az karmaşık hale getirmeye yardımcı olurlar. 
+// -Büyük sorunlara neden olabilecek ince sorunları önlemeye yardımcı
+// olur ve ayrıca kod okunabilirliğini artırır.
+// -Ortak bir programlama sorununa karşı standart bir çözüm işlemi,
+// yazılımın büyük ölçekte yeniden kullanılmasını sağlar.
+// Design Pattern Kategorileri:
+// Creational Patterns (Yaratımsal Kalıplar): Nesnelerin oluşturulmasında ve yönetilmesinde
+// kullanılan bir desendir. Bu program akışında hangi nesneye ihtiyaç varsa onu oluşturmada 
+// esneklik ve kolaylık sağlar.
+// Structural Patterns (Yapısal Kalıplar): Birden fazla sınıfın bir işi yerine getirirken
+// nasıl davranacağını belirlemek için kullanılan desenlerdir. 
+// Behavioral Patterns (Davranışsal Kalıplar): Nesnelerin birbirleri ile ilişkisini 
+// düzenleyen desendir.
+// https://www.argenova.com.tr/design-pattern-tasarim-kaliplari-nedir#:~:text=Design%20Pattern%2C%20yaz%C4%B1l%C4%B1m%20geli%C5%9Ftiricilerinin%20yaz%C4%B1l%C4%B1m,bi%C3%A7imde%20yeniden%20kullan%C4%B1labilir%20%C3%A7%C3%B6z%C3%BCmler%20sa%C4%9Flar.
+
+// 4- UML(Unified Modeling Language(Birleşik Modelleme Dili)) Diyagramı nedir?
+// UML, bir sistemin tasarımını görselleştirmek için yazılım mühendisliği alanında
+// genel amaçlı modelleme dilidir. Yazılı bir dil değildir. Farklı amaçlar için kategorilere
+// ayrılmış olsa da, genel itibariyle modelleme için kullanılır. 1995 yılında, yazılımlarda
+// bir standart yaklaşım oluşturmak için geliştirilmiştir. Yani UML diyagramları ile önceden
+// modellediğiniz bir yazılım projesini, modele uygun olacak şekilde herhangi bir dil ile
+// geliştirebiliyorsunuz. Bu da yazılım mühendisleri arasında ortak bir dil oluşturuyor. 
+// İlk çıktığı zamandan beri sürekli geliştirme göstererek, birçok farklı dala ayrılmıştır.
+// Neden UML?
+// Hataların kolaylıkla fark edilip en düşük seviyeye indirgenmesi.(Risk, zaman, maliyet)
+// Kodlama kolaylığı sağlar.
+// Kullanılan tekrar kod sayısı ayırt edilebilir bu sayede verim sağlanır.
+// Mantıksal hataların minimum seviyeye düşürülmesini sağlar.
+// Geliştirme maliyetinin düşmesini sağlar.
+// Resmin tamamının görülmesini sağlar.
+// UML diyagramları ile yazılım tamamını görebileceğimiz için verimli bellek kullanımı sağlanabilir.
+// Karmaşık sistemlerde değişiklik yapmayı kolaylaştırır.
+// UML ile dokümanlandırılmış kodları düzenlemek daha az zaman alacaktır
+// UML diyagramlarını kullanan yazılımcılar aynı dili konuşacaklarından kolay iletişim sağlanır.
+
+// 5- Heap memory, Stack memory nedir?
+// Stack Memory, işlemcilerin register bilgilerinin tutulduğu yerdir. Burada programınızla ilgili bilgiler
+// (örneğin; lokal değişkenler, referans değişkenler vs) yer almaktadır. Bu memory, geliştirici tarafından
+// değil, compiler tarafından yönetilir. Stack’teki bilgiler kodunuzun derleme aşamasında, direk bellek
+// içine yerleştirildiği için erişimi oldukça hızlıdır.
+// Heap Memory, bellek üzerinde yer tahsisi yapılan belli bir bölümdür. Bu yer, bellek üzerinde “malloc”
+// fonksiyonu aracılığıyla tahsis edilir ve heap üzerinde allocate edilen(yer tahsisi yapılan) bellek “free”
+// lenerek tekrar kullanım için serbest bırakılır. Heap’teki bellek kullanımı compiler tarafından değil,
+// geliştiriciler tarafından kontrol edilir. Karmaşık programlar oluştururken, genellikle büyük bir bellek
+// alanına ihtiyaç duyarız. Bu durumda Heap Memory kullanırız. Heap üzerinde allocate ettiğimiz bellek
+// operasyonuna “dynamic memory allocation” adı verilir.
+// İkisi arasındaki en temel fark; Stack Memory’deki değerler son giren ilk 
+// çıkar mantığına göre tutulurken, Heap Memory’de bu durum rastgeledir(random).
+// Programlarımızda bu iki belleği birbirinden olabildiğince ayırırız.
+// Stack bellekten statik olarak yer tahsisi için kullanılırken, Heap dinamik 
+// olarak yer tahsisi etmeyi sağlar. Her ikisi de Ram bölgesinde bulunur. Stack'te yer alan veriler
+// direk bellek içine yerleştirilir dolayısıyla erişimi çok hızlıdır. Heap ise runtime (çalışma zamanı)
+// anında kullanılırlar ve dağınık bir bellek göz yapısı olduğu için erişimi stack kadar kolay olmaz 
+// dolayısıyla yavaş çalışır. Stack bellekteki veri hemen silinirken Heap bellekteki verinin silinmesi
+// Garbage Collector’a (Çöp toplama mekanizmasına) bağlıdır. Stack alanı sınırlı olduğundan çok büyük
+// sayıda ve büyük tiplerde veri atanması belleğin dolmasına sebep olabilir.
+// Stack veri yapısına üst üste dizili tabaklar örnek verilebilir. Alttaki bir tabağı almak istediğinizde
+// nasıl ki üstündeki tabakları da indirmeniz gerekiyorsa, stack veri yapısında da aradaki bir veriyi
+// alabilmek için öncelikle üsttekileri çekmek gerekiyor.
+// Kullanacağınız yerin boyutunu tam olarak biliyorsanız Stack, ihtiyacınız olan boyutu tam olarak
+// bilmiyorsanız Heap kullanımı daha mantıklı bir tercih olacaktır.
+
+// 6- Debug nedir, debug nasıl atılır?
+// Bug, donanım veya yazılımla ilgili beklenmeyen herhangi bir sorunu tanımlamak için kullanılan
+// genel bir terimdir. Bug’lar göz ardı edilebilecek küçük sorunlardan yazılımın kullanılmasını
+// imkansız hale getirecek büyük sorunlara kadar ürün performansı üzerinde kapsamlı bir etkiye
+// sahip olabilir. Her iki durumda da, kullanıcı deneyimini iyileştirmek için bug’lar detaylı
+// şekilde ele alınarak düzeltilmelidir. Çünkü birçok bug, bir ürünün performansını ve 
+// işlevselliğini etkileyerek kullanıcı deneyimini aşağılara çekebilir. Özellikle çökme gibi
+// en yaygın bug türlerinden biri gerçekleşirse, yazılım beklenilen gibi çalışmayı bırakır ve
+// muhtemelen bir eylemin ortasında kapanarak çökme meydana gelir. 
+// Debug yazılımdaki bug‘ların yani hataların kodlar üzerinden adım adım gidilerek bulunması ve 
+// giderilmesi işlemine denir.
+
+// ÖRNEKLER:
+// Örnek1: 1.dereceden 2 bilinmeyenli denklem.
+// Kullanıcıdan aldığımız 2 değişkeni hesaplattıralım.
+// y=3x+5k; x ve k kullanıcıdan alınan sayılara göre hesaplama yapılacaktır.(Arrow function)
+// let birDerDenk= () => {
+//     let birinciB= Number(prompt("Birinci bilinmeyen değeri giriniz:"));
+//     let ikinciB= Number(prompt("İkinci bilinmeyen değeri giriniz:"));
+//     let y=3*birinciB+5*ikinciB;
+//     console.log("y = "+y);
+// }
+// birDerDenk();
+
+// Örnek2: Dereceyi fahrenhayta çeviren function. (Anonymous function)
+// Kullanıcıdan alınan dereceyi Fahrenhayta çeviren function. (Arrow Function)
+// Formül: (dereceSayi * 9 / 5) + 32;
+// let fahrenhayt= () => {
+//     let derece= Number(prompt("Derece giriniz:"));
+//     let fah= (derece*9/5)+32;
+//     console.log(derece+" derece: "+fah+" fahrenhayttır.");
+// }
+// fahrenhayt();
+
+// Örnek3: Dört işlem
+// 4+3*2(3:3-1*6+9:1+(3:3))
+// let dortIslem= () => {
+//     let sonuc= 4+3*2*(3/3-1*6+9/1+(3/3));
+//     console.log(sonuc);
+// }
+// dortIslem();
+
+// Örnek4: password-repassword function (Normal Function) ternary
+// function password(){
+
+// }
+
+// Örnek5: Kullanıcının girdiği sayının Negatif mi, Pozitif mi olduğunu bulan function.(anonymous)
+// let pozitifNegatif= function () {
+//     let sayi;
+//     sayi=Number(prompt("Bir sayı giriniz:"));
+//     if(sayi>=0)
+//         console.log("Girilen sayı pozitiftir.");
+//     else
+//         console.log("Girilen sayi negatiftir.");
+// }
+// pozitifNegatif();
+
+// Örnek6: 1'den 10'a kadar sayıların toplamı ancak 5'e bölünebilen sayılar hariç.
+// continue
+// let sonuc= () => {
+//     let toplam=0;
+//     for(let i=1; i<=10; i++){
+//         if(i%5===0)
+//             continue;
+//         toplam+=i;
+//     }
+//     console.log(toplam);
+// }
+// sonuc();
+
+// Örnek7: Kullanıcıdan alınan sayıya göre random sayılar oluştursun.
+// 0-) ilk ve son sayının toplamı ?
+// 1-) Toplamları
+// 2-) Ortalaması
+// 3-) Tek sayı toplamları
+// 4-) Kaç tane Tek sayı 
+// 5-) Çift sayı toplamları
+// 6-) Kaç tane çift sayı
+// let randomFonksiyon= () => {
+//     let sayi,randomSayi,toplam=0,ortalama,tekSayi=0,ciftSayi=0,tekSayiToplam=0,ciftSayiToplam=0,ilkSonToplam;
+//     let dizi=[];
+//     sayi=Number(prompt("Lütfen bir sayı giriniz:"));
+//     for(let i=0; i<sayi; i++){
+//         randomSayi= Number(Math.round(Math.random()*9+1));
+//         dizi[i]= randomSayi;
+//     }
+//     console.log(dizi);
+//     ilkSonToplam=dizi[0]+(dizi[dizi.length-1]);
+//     console.log(ilkSonToplam);
+//     for(let j=0;j<dizi.length; j++){
+//         toplam+=dizi[j];
+//         ortalama=toplam/dizi.length;
+//         if(dizi[j]%2===0){
+//             ciftSayi+=1;
+//             ciftSayiToplam+=dizi[j];
+//         }
+//         else{
+//             tekSayi+=1;
+//             tekSayiToplam+=dizi[j];
+//         }
+//     }
+//     console.log(toplam);
+//     console.log(ortalama);
+//     console.log(tekSayiToplam);
+//     console.log(ciftSayiToplam);
+//     console.log(tekSayi);
+//     console.log(ciftSayi);
+// }
+// randomFonksiyon();
+
+// Örnek8: Kullanıcının Girdiği Sayının Faktöriyelini hesaplama.
+// let faktoriyelHesaplama= () => {
+//     let sayi,fak=1;
+//     sayi=Number(prompt("Bir sayı giriniz:"));
+//     for(let i=1; i<=sayi; i++){
+//         fak*=i;
+//     }
+//     console.log(sayi+" sayısının faktoriyeli: "+fak);
+// }
+// faktoriyelHesaplama();
 
 
+// Örnek9: Kullanıcıdan aldığımız kelimeyi tersine çeviren program.
+// exam: bardak  ==> kadrab
+// let tersineCevirme= () => {
+//     let kelime;
+//     kelime=prompt("Bir kelime giriniz:");
+//     let tersKelime= kelime.split('').reverse().join('');
+//     console.log(tersKelime);
+// }
+// tersineCevirme();
+
+// Örnek10: kullanıcı tarafından başlangıç,bitiş sayıları al ve bir döngüde devam etsin.
+// s1-)  başlangıç, bitiş sayıların toplamı
+// s2-)  başlangıç, bitiş çift sayıların toplamı
+// s2-)  başlangıç, bitiş tek sayıların toplamı
+// s3-)  başlangıç, bitiş sayıların toplamı ancak 5'e bölünebilen sayılar hariç
+// let startEndFunction= () => {
+//     let baslangicSayisi= Number(prompt("Başlangıç sayısı giriniz:"));
+//     let bitisSayisi= Number(prompt("Bitiş sayısı giriniz:"));
+//     let toplam=0,dizi=[],ciftSayiToplam=0,tekSayiToplam=0;
+//     for(let i=baslangicSayisi; i<=bitisSayisi; i++){
+//         dizi[i]=i;
+//         toplam+=dizi[i];
+//         if(i%2===0)
+//             ciftSayiToplam+=i;
+//         else
+//             tekSayiToplam+=i;
+//     }
+//     console.log(dizi);
+//     console.log(toplam);
+//     console.log(ciftSayiToplam);
+//     console.log(tekSayiToplam);
+//     let result=0;
+//     for(let j=baslangicSayisi; j<=bitisSayisi; j++){
+//         if(j%5===0)
+//             continue;
+//         result+=dizi[j];
+//     }
+//     console.log(result);
+// }
+// startEndFunction();

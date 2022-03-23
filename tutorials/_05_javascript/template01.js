@@ -1,4 +1,4 @@
-// Ders-5
+// // Ders-5
 // single commit
 /* multiple commit */
 
@@ -236,8 +236,7 @@
 // search(): 
 // console.log(kelime.search('css3')); // ==> 7
 
-// Ders-6
-
+// // Ders-6
 // escape characters
 // back slash (\) : özel simgeleri yazmak için kullanırız.
 // console.log("deneme"); // => deneme
@@ -506,28 +505,208 @@
 //    i++;
 // } while(i<2); // => 1 kere çalıştı.
 
-// Ders-7
+// // Ders-7
+// Array(Diziler)
+// let dizi1= []; //boş dizi oluşturma
+// let dizi= ["html5","css3","js"];
 
+// dizi.push() : Sona bir eleman eklemek
+// dizi.unshift() : Başa bir eleman eklemek
+// dizi.pop() : Sondan 1 eleman çıkarmak
+// dizi.shift() : Baştan 1 eleman çıkarmak
+// delete dizi[0] : İstenilen indis numarasındaki dizi elemanını silmek
+// dizi.sort() : Küçükten büyüğe doğru sıralamak
+// dizi.reverse() : Büyükten küçüğe doğru sıralamak
 
+// console.log(dizi);
+// console.log(dizi[8]); // => undefined
+// console.log(dizi[2]); // => js
+// console.log(dizi[dizi.length-1]); // => js (length: dizi uzunluğunu verir.)
 
+// iterative for
+// for(let i=0; i<dizi.length; i+=1){
+//     console.log((i+1)+' '+dizi[i]); 
+// } 
+// Çıktısı: 1 html5
+//          2 css3
+//          3 js
 
+// for-in yapısı
+// for(let temp in dizi){
+//     console.log(temp+"==>"+dizi[temp]);
+// }
+// Çıktısı: 0==>html5
+//          1==>css3
+//          2==>js
 
+// for(temp of dizi){
+//     console.log(temp);
+// }
+// Çıktısı: html5
+//          css3
+//          js
 
+// Dizi Fonksiyonları
 
+// EKLEME
+// push(): sona bir eleman eklemek için kullanılır.
+// dizi.push("javascript");
+// for(temp of dizi){
+//     console.log(temp);
+// }
+// Çıktısı: html5
+//          css3
+//          js
+//          javascript
 
+// unshift(): başa bir eleman eklemek için kullanılır.
+// dizi.unshift("python");
+// for(temp of dizi){
+//     console.log(temp);
+// }
+// Çıktısı: python
+//          html5
+//          css3
+//          js
 
+// ÇIKARMA
+// pop(): sondan bir eleman çıkarmak için kullanılır.
+// dizi.pop();
+// for (temp of dizi) {
+//   console.log(temp);
+// }
+// Çıktısı: html5
+//          css3
 
+// shift(): baştan bir eleman çıkarmak için kullanılır.
+// dizi.shift();
+// for (temp of dizi) {
+//   console.log(temp);
+// }
+// Çıktısı: css3
+//          js
 
+// Delete: istediğim indis numarasındaki dizi elemanını siler.
+// delete dizi[1];
+// for(temp of dizi){
+//     console.log(temp);
+// }
+// Çıktısı: html5
+//          undefined // bu değeri sildi ama geride kalıntı bırakır.
+//          js
 
+// sort(): küçükten büyüğe doğru sıralama yapar.
+//let dizi1=[1,2,5,-8,2];
+// dizi1.sort();
+// for(temp of dizi1){
+//     console.log(temp);
+// }
+// Çıktısı: -8
+//          1
+//          2
+//          2
+//          5
 
+// reverse(): diziyi tersten yazar.
+// dizi1.reverse();
+// for(temp of dizi1){
+//     console.log(temp);
+// }
+// Çıktısı: 2
+//          -8
+//          5
+//          2
+//          1
 
+// dizi1.reverse();
+// console.log(dizi1); // => [2,-8,5,2,1]
 
+// join(): dizideki her bir elemana eklemek için(verilen değer aralarına koyup bende string hale geliyor)
+// dizi.join("logo");
+// console.log(dizi);
+// bu kısım bende çalışmadı neden sor?
 
+// ÖRNEKLER:
 
+// Örnek1: 1.dereceden 2 bilinmeyenli denklem.
+// Kullanıcıdan aldığımız 2 değişkeni hesaplattıralım.
+// y=3x+5k; x ve k kullanıcıdan alınan sayılara göre hesaplama yapılacaktır.(Arrow function)
+// let equationWithUnKnow=()=>{
+//     let number1,number2,result;
+//     number1=Number(prompt("1.sayı"));
+//     number2=Number(prompt("2.sayı"));
+//     result=3*number1+5*number2;
+//     console.log(result);
+// }
+//equationWithUnKnow();
 
+// Örnek2: Dereceyi fahrenhaya çeviren function. (Anonymous function)
+// Kullanıcıdan alınan dereceyi Fahrenhata çeviren function. (Arrow Function)
+// Formül: (dereceSayi * 9 / 5) + 32;
+// let toFahrenhayt=function(){
+//     let degree,result;
+//     degree=Number(prompt("Lütfen dereceyi giriniz"));
+//     result=(degree*9/5)+32;
+//     console.log(result);
+// }
+// toFahrenhayt();
 
+// Örnek3: Dört işlem
+// 4+3*2(3:3-1*6+9:1+(3:3))
 
+// Örnek4: password-repassword function (Normal Function) ternary
 
+// Örnek5: Kullanıcının Girdiği Sayının Negatif mi, Pozitif mi Olduğunu Bulan function.(anonymous)
+
+// Örnek6: 1'den 10'a kadar sayıların toplamı ancak 5'e bölünebilen sayılar hariç.
+// continue
+// let totalfiveExcluded=()=>{
+//     let sum=0;//başlangıç bir değer: sıfır etkisiz toplama
+//     for (let i = 1; i <= 10; i=i+1) {
+//         if(i%5===0)
+//             continue; // bu işlemi sadece atlar
+//         sum+=i;
+//     }
+//     console.log("toplam: "+sum);
+// }
+// totalfiveExcluded();
+
+// Örnek7: Kullanıcıdan alınan sayıya göre random sayılar oluştursun.
+// 0-) ilk ve son sayının toplamı ?
+// 1-) Toplamları
+// 2-) Ortalaması
+// 3-) Tek sayı toplamları
+// 4-) Kaç tane Tek sayı 
+// 5-) Çift sayı toplamları
+// 6-) Kaç tane çift sayı
+//Random
+// let rndArray=()=>{
+       //değişkenleri(variable)
+//     let rndNumber,firstEndSum=0,number,array=[];
+//     number=Number(prompt("Lütfen bir sayı giriniz"));
+       //döngüde rastgele sayı oluşturmak
+//     for (let i=0; i<number; i++){
+//         rndNumber=Number(Math.round(Math.random()*9+1));
+//         array[i]=rndNumber;
+//     }
+//     console.log(array);
+//     firstEndSum=array[0]+array[array.length-1];
+//     console.log(firstEndSum)
+// }
+
+//sonarQube
+// rndArray();
+
+// Örnek8: Kullanıcının Girdiği Sayının Faktöriyel hesaplama.
+
+// Örnek9: Kullanıcıdan aldığımız kelimeyi tersine çeviren program.
+// exam: bardak  ==> kadrab
+
+// Örnek10: kullanıcı tarafından başlangıç,bitiş sayıları al ve bir döngüde devam etsin.
+// s1-)  başlangıç, bitiş sayıların toplamı
+// s2-)  başlangıç, bitiş çift sayıların toplamı
+// s2-)  başlangıç, bitiş tek sayıların toplamı
+// s3-)  başlangıç, bitiş sayıların toplamı ancak 5'e bölünebilen sayılar hariç
 
 
 
