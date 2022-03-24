@@ -531,7 +531,7 @@
 //          2 css3
 //          3 js
 
-// for-in yapısı
+// for-in yapısı: index kısmı verir
 // for(let temp in dizi){
 //     console.log(temp+"==>"+dizi[temp]);
 // }
@@ -539,6 +539,7 @@
 //          1==>css3
 //          2==>js
 
+// for-of yapısı: elemanları verir
 // for(temp of dizi){
 //     console.log(temp);
 // }
@@ -621,10 +622,10 @@
 // dizi1.reverse();
 // console.log(dizi1); // => [2,-8,5,2,1]
 
-// join(): dizideki her bir elemana eklemek için(verilen değer aralarına koyup bende string hale geliyor)
+// join(): array içerisindeki bütün verileri birleştirerek string değer döndürür.
+// Indeks vermezsek default değer olarak virgül atanır.
 // dizi.join("logo");
-// console.log(dizi);
-// bu kısım bende çalışmadı neden sor?
+// console.log(dizi); => html5logocss3logojs
 
 // ÖRNEKLER:
 
@@ -708,85 +709,241 @@
 // s2-)  başlangıç, bitiş tek sayıların toplamı
 // s3-)  başlangıç, bitiş sayıların toplamı ancak 5'e bölünebilen sayılar hariç
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// // Ders-8
+// Dizi fonksiyonlarına devam
+
+// join(): Array(dizi) içerisindeki bütün verileri birleştirerek string değer geri döndürür.
+// Default olarak virgül değeri atanır.
+// let joinTutorials= () => {
+//        let dizi = ["java","html","css","js"];
+//        console.log(dizi); // => ['java', 'html', 'css', 'js']
+
+//        let kelime = dizi.join();
+//        console.log(kelime); // => java,html,css,js
+
+//        console.log(typeof kelime); // => string // typeof ile kelimenin tipine baktık
+
+//        kelime = dizi.join("");
+//        console.log(kelime); // => javahtmlcssjs
+
+//        kelime = dizi.join("&");
+//        console.log(kelime); // => java&html&css&js
+// }
+// joinTutorials();
+
+// concat(): Birleştirme yapar. "+" işlemine göre daha performanslıdır.
+// String ve dizi düzeyinde birleştirme yapar.
+// function concatTutorials(){
+//        let kelime1 = "Merhabalar";
+//        let kelime2 = "Nasılsınız";
+
+//        let birlestir1 = kelime1 + kelime2;
+//        console.log("1. + ile birleştirme: "+birlestir1); // => 1. + ile birleştirme: MerhabalarNasılsınız
+
+//        let birlestir2 = kelime1.concat(kelime2);
+//        console.log("2. concat birleştirme: " + birlestir2); // => 2. concat birleştirme: MerhabalarNasılsınız
+
+          //dizi birleştirmek
+//        const dizi1 = ["1","2","3"];
+//        const dizi2 = ["4", "5", "6"];
+
+//        let diziBirlestirme1 = dizi1 + dizi2;
+//        console.log(diziBirlestirme1); // => 1,2,34,5,6 (iki diziyi direk string olarak birleştirdi)
+
+//        let diziBirlestirme2 = dizi1.concat(dizi2);
+//        console.log(diziBirlestirme2); // => ['1', '2', '3', '4', '5', '6'] (iki diziyi dizi olarak birleştirdi)
+// }
+// concatTutorials();
+
+// Dizilerde toplu ekleme veya çıkarma
+// splice(): ekle veya sil
+// splice(para1,para2,para3): 1.parametre => indeksi belirler
+//                            2.parametre => kaç tane eleman silineceğini belirler
+//                            3.parametre => eklenecek veriyi gösterir
+// function spliceTutorials() {
+//        let dizi4 = [1,2,3,4,5,6,7];
+//        console.log(dizi4);
+
+          // dizi4.splice(2,3); // 2.indeksten başlayarak 3 tane eleman siler
+          // console.group(dizi4); // => [1, 2, 6, 7]
+
+//        dizi4.splice(1,2,"eklenen1","eklenen2"); // 1.indeksten başlayarak 2 eleman siler ve verilen iki değeri ekler.
+//        console.log(dizi4); // => [1, 'eklenen1', 'eklenen2', 4, 5, 6, 7] // 2 ve 3'ü sildi
+// }
+// spliceTutorials();
+
+// slice(): Parçalama metodlarındandır. 
+// Başlangıç ve bitiş indeksi vererek aralıktaki karakter dizisini alabiliriz.
+// Başlangıç ve bitiş indekslerini negatif olarak da verebiliriz. En sağdaki karakter -1 ile başlar.
+// slice() metoduna bitiş indeksini vermezsek sona kadar alır.
+// slice() metodu ile substring() metodunun farkı; substring()'da negatif indeks kullanamıyoruz.
+// function sliceTutorials(){
+//        let eskiDizi = [1,2,3,4,5,6,7];
+//        console.log(eskiDizi);
+
+//        let yeniDizi = eskiDizi.slice(4); // verilen indeks ve sonrasını alır. Birinci parametre başlangıç indeksidir.
+//        console.log(yeniDizi); // => [5, 6, 7]
+
+//        let yeniDizi2 = eskiDizi.slice(1,4); // birinci parametre başlangıç(dahil), ikinci parametre bitiştir(dahil değil). İçinde kalan değerleri döndürdü.
+//        console.log(yeniDizi2); // => [2, 3, 4]
+// }
+// sliceTutorials();
+
+// Debug nedir?(Hata Ayıklama)
+// Debug nasıl atılır?
+// F5: debug konsolu kısayolu
+// let sayi11=11;
+// let sayi22=22;
+// let sonuc=sayi11+sayi22;
+// console.log(sonuc);
+
+// Diziye parametre göndermek ve almak
+// function diziBaslangic(){
+          // let dizi = [1,2,3];
+          // okunabilirliği,hız açısından iyidir
+//        let dizi= new Array(1,2,3);
+//        return dizi;
+// }
+// function diziVeriAl(temp){
+//        console.log(temp);
+// }
+// diziVeriAl(diziBaslangic());
+
+// Date(zaman): yıl/ay/gün
+// let dateTutorials=() => {
+//        let tarih = new Date();
+//        console.log(tarih); // => Thu Mar 24 2022 16:38:58 GMT+0300 (GMT+03:00)
+
+          //get: bir şeyi çağırmayı sağlar.
+//        console.log(tarih.getDate()); // => 24
+//        console.log(tarih.getHours()); // => 16
+//        console.log(tarih.getFullYear()); // => 2022
+
+          //set: veriyi kendimize göre değiştirebiliriz.
+//        console.log(new Date('2015-1-1')); // => Thu Jan 01 2015 00:00:00 GMT+0200 (GMT+03:00)
+//        console.log(new Date(1000000000)); // => Mon Jan 12 1970 15:46:40 GMT+0200 (GMT+03:00)
+// }
+// dateTutorials();
+
+// let dateShow= () => {
+          // let tarih = new Date();
+          // let saat = tarih.getHours();
+          // console.log(saat); // => 16(şuanki saati gösterir)
+
+//        console.log(new Date().getHours()); // Bu da şuanki saati gösterir. Direk console içinde tanımladık ve çağırdık.
+          // o anki zaman 20'den sonra ise az kaldı, 20'den önce ise çok zaman var yanıtını döndürür.
+//        let ternary = (new Date().getHours() >= 20) ? "az kaldı" : "çok zaman var" ;
+//        console.log(ternary); // => çok zaman var (20'den önceydi saat)
+// }
+// dateShow();
+
+// OBJECT(NESNE)
+// Bir varlığa verilen tüm özelliklerinin toplamıdır.
+// Literal Object
+// arrow function 
+// let object= () => {
+          //let array1=[];
+//        let array1= new Array();
+//        console.log(array1); // => [] // boş dizi oluşturduk.
+
+          //let obj1={};
+//        let obj1= new Object();
+//        console.log(obj1); // => {} // boş bir nesne oluşturduk.
+
+// }
+// object();
+
+// let object2= () => {
+//        let person={};
+
+          //objemize değerler verelim
+//        person.firstName="Handan";
+//        person.surName="Günaydın";
+//        person.job="Computer Engineer";
+//        person.middleName="Göbek adı";
+
+//        console.log(person); // => {firstName: 'Handan', surName: 'Günaydın', job: 'Computer Engineer', middleName: 'Göbek adı'}
+//        console.log(person.middleName.toUpperCase()); // => GÖBEK ADI
+//        console.log(person.firstName.endsWith("n")); // => true
+// }
+// object2();
+
+// objemize, değerleri içinde de verebilir(daha çok kullanılır)
+// let object2= () => {
+//        let person={
+//               firstName:"handan",
+//               lastName:"günaydın",
+//               job:"computer engineer",
+//               middleName:"göbek adı"
+//        };
+//        console.log(person); // => {firstName: 'handan', lastName: 'günaydın', job: 'computer engineer', middleName: 'göbek adı'}
+          //Object'e yeni attributes ekleyebiliriz
+//        person.yas=27; // yeni obje olarak yaş bilgisi ekler
+//        console.log(person); // => {firstName: 'handan', lastName: 'günaydın', job: 'computer engineer', middleName: 'göbek adı', yas: 27}
+//        console.log(person.lastName.toLowerCase()); // => günaydın
+          //Object içinde verilen attributes içeriğinide değiştirebiliriz.
+//        person.firstName="melek";
+//        console.log(person.firstName); // => melek 
+// }
+// object2();
+
+// Object Function: objenin içindeki özelliklere fonksiyon ekleyebiliriz.
+// let object3= () => {
+//        let person={
+//               firstName:"handan",
+//               lastName:"günaydın",
+//               job:"computer engineer",
+//               hesaplama: function(sayi1,sayi2){
+//                      return sayi1+sayi2;
+//               }
+//        };
+//        console.log(person.hesaplama(2,5)); // => 7 // (2+5)
+// }
+// object3();
+
+// Nestned Object : obje içinde object
+// Object Function-1
+// let object3= () => {
+//        let person={
+//               firstName:"handan",
+//               lastName:"günaydın",
+//               yas:27,
+//               job:"computer engineer",
+//               hesaplama: function(sayi1,sayi2){
+//                      return sayi1*sayi2;
+//               },
+//               damar:{
+//                      damarAdi:"toplardamar",
+//                      damarTuru:"tür 1452"
+//               }
+//        };
+//        console.log(person); // => {firstName: 'handan', lastName: 'günaydın', yas: 27, job: 'computer engineer', hesaplama: ƒ, …}
+//        console.log(person.damar.damarAdi); // => toplardamar
+// }
+// object3();
+
+// Object Function-2
+// let object3= () => {
+//        let person={
+//               firstName:"handan",
+//               lastName:"günaydın",
+//               yas:27,
+//               job:"computer engineer",
+//               hesaplama: function(sayi1,sayi2){
+//                      return sayi1*sayi2;
+//               },
+//               damar:{
+//                      damarAdi:"toplardamar",
+//                      damarTuru:"tür 1452"
+//               }
+//        };
+//        console.log(person); // => {firstName: 'handan', lastName: 'günaydın', yas: 27, job: 'computer engineer', hesaplama: ƒ, …}
+//        console.log(person["damar"]["damarAdi"]); // => toplardamar // bu çağırma şekli pek tercih edilmez.
+// }
+// object3();
+
+// // Ders-9
+//Constructor
 
 
 

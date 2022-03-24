@@ -512,3 +512,13 @@ ifade olarak geri döndürür. Varsayılan olarak dizi öğeleri string ile ayr�
 //     console.log(result);
 // }
 // startEndFunction();
+
+///////////// ÖDEV4 /////////////////
+//Object CV 
+//adi
+//soyadi
+//yas
+//diller[]
+//meslek{}
+//emeklilik=function(age){return 2022-age} ==> yaş<18 yaş>=150 (validation)
+//String toUppercase vs.
