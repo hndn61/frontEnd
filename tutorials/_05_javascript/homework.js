@@ -391,10 +391,17 @@ ifade olarak geri döndürür. Varsayılan olarak dizi öğeleri string ile ayr�
 // }
 // dortIslem();
 
-// Örnek4: password-repassword function (Normal Function) ternary
+// Örnek4: password-repassword function (Normal Function)
 // function password(){
-
+//     let sifre, tekrarSifre;
+//     sifre = prompt("Şifrenizi giriniz: ");
+//     tekrarSifre = prompt("Tekrar şifrenizi giriniz:");
+//     if(sifre === tekrarSifre)
+//         console.log("Giriş Başarılı...");
+//     else
+//         console.log("Giriş Başarısız...");
 // }
+// password();
 
 // Örnek5: Kullanıcının girdiği sayının Negatif mi, Pozitif mi olduğunu bulan function.(anonymous)
 // let pozitifNegatif= function () {
@@ -522,3 +529,68 @@ ifade olarak geri döndürür. Varsayılan olarak dizi öğeleri string ile ayr�
 //meslek{}
 //emeklilik=function(age){return 2022-age} ==> yaş<18 yaş>=150 (validation)
 //String toUppercase vs.
+
+let cvObject= () => {
+    let kisiselBilgiler = {
+        adi: (prompt("Ad: ")),
+        soyadi: (prompt("Soyad: ")),
+        yas: (Number(prompt("Yaş: "))),
+    };
+    let iletisimBilgiler = {
+        cepNo: (Number(prompt("Cep No: "))),
+        email: prompt("Mail: ")
+    };
+    let egitimBilgileri = {
+        universite: (prompt("Üniversite Adı: ")),
+        bolum: (prompt("Bölüm Adı: ")),
+        baslangicYili: (Number(prompt("Başlangıç Yılı: "))),
+        bitisYili: (Number(prompt("Bitiş Yılı:")))
+    };
+    let diller= new Array();
+    let dilSayisi= Number(prompt("Kaç dil bilgisi girmek istersiniz: "));
+    for(let i=0; i<dilSayisi; i++){
+        diller[i]=prompt((i+1)+".dil: ");
+    }
+    let meslekBilgisi={
+        meslek: (egitimBilgileri.bolum),
+        meslekBasYili: Number(prompt("İşe Giriş Yılı: ")),
+        meslekBitisYili: Number(prompt("İşten Çıkış Yılı: "))
+    };
+    let zaman= new Date();
+    let emeklilik = {
+        cinsiyet: prompt("Cinsiyetinizi giriniz(K/E):"),
+        dogumYili: function(par1,par2){
+                return par1-par2;
+        },
+        calismaSuresi: function(para1,para2){
+                return para1-para2;
+        },
+        emeklilikHesaplama: function(calismaS,yasB,cinsiyet){
+                if(cinsiyet === "K"){
+                        if(yasB >= 54 && calismaS >= 15){
+                                return "Emekli olabilirsiniz...";
+                        }
+                        else{
+                                return "Emekli olamazsınız...";
+                        }
+                }else{
+                        if(yasB >= 55 && calismaS >= 15){
+                                return "Emekli olabilirsiniz...";
+                        }
+                        else{
+                                return "Emekli olamazsınız...";
+                        }
+                }
+        }
+    };
+    console.log(kisiselBilgiler);
+    console.log(iletisimBilgiler);
+    console.log(egitimBilgileri);
+    console.log(diller);
+    console.log(meslekBilgisi);
+    console.log(emeklilik);
+    console.log(emeklilik.dogumYili(zaman.getFullYear(),kisiselBilgiler.yas));
+    console.log(emeklilik.calismaSuresi(meslekBilgisi.meslekBitisYili,meslekBilgisi.meslekBasYili));
+    console.log(emeklilik.emeklilikHesaplama(emeklilik.calismaSuresi,egitimBilgileri.yas,emeklilik.cinsiyet));
+}
+cvObject();

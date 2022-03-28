@@ -799,8 +799,7 @@
 
 // Diziye parametre göndermek ve almak
 // function diziBaslangic(){
-          // let dizi = [1,2,3];
-          // okunabilirliği,hız açısından iyidir
+          // let dizi = [1,2,3]; // okunabilirliği,hız açısından iyidir
 //        let dizi= new Array(1,2,3);
 //        return dizi;
 // }
@@ -814,14 +813,16 @@
 //        let tarih = new Date();
 //        console.log(tarih); // => Thu Mar 24 2022 16:38:58 GMT+0300 (GMT+03:00)
 
-          //get: bir şeyi çağırmayı sağlar.
-//        console.log(tarih.getDate()); // => 24
-//        console.log(tarih.getHours()); // => 16
-//        console.log(tarih.getFullYear()); // => 2022
+         //get: bir şeyi çağırmayı sağlar.
+         //console.log(tarih.getDate()); // => 24
+         //console.log(tarih.getHours()); // => 16
+         //console.log(tarih.getFullYear()); // => 2022
 
-          //set: veriyi kendimize göre değiştirebiliriz.
-//        console.log(new Date('2015-1-1')); // => Thu Jan 01 2015 00:00:00 GMT+0200 (GMT+03:00)
-//        console.log(new Date(1000000000)); // => Mon Jan 12 1970 15:46:40 GMT+0200 (GMT+03:00)
+         //set: veriyi kendimize göre değiştirebiliriz.
+         //console.log(new Date('2015-1-1')); // => Thu Jan 01 2015 00:00:00 GMT+0200 (GMT+03:00)
+         //console.log(new Date(1000000000)); // => Mon Jan 12 1970 15:46:40 GMT+0200 (GMT+03:00)
+         //tarih.setHours(22); // saati kendimize göre değiştirdik
+         //console.log(tarih);
 // }
 // dateTutorials();
 
@@ -943,7 +944,220 @@
 // object3();
 
 // // Ders-9
-//Constructor
+//Object Diziler
+// let objectArray= () => {
+//        let person={
+                 //attributes
+//               firstname: "Hamit",
+//               job: "Computer Engineer",
+//               middleName: "Göbek Adı",
+//               lastName: "Mızrak",
+//               hesaplama: function(sayi1,sayi2){
+//                      return sayi1+sayi2;
+//               },
+                 //Object
+//               damar: {
+//                      damarAdi: "toplardamar",
+//                      damarTuru: "tur 4521"
+//               },
+                 //Dizi
+//               diller:['javascript','java','c#','python'],
+//               dillerOzellikleri: {
+//                      roles: "asd",
+//               }
+//        };
+//        console.log(person);
+//        console.log(person.diller[0]); // => javascript // diller dizisinin 0. indeksini döndürür
+//        console.log(person.dillerOzellikleri.roles); // => asd
+//        console.log(person.diller.join("")); // => javascriptjavac#python
+// }
+// objectArray();
+
+// Template Literal ES6: Daha kolay işlem yapmamıza olanak sağlar.
+// 1-MultiLine Literal
+// 2-Interpolation Literal
+
+// let templateLiteralTutorials= () => {
+//        let normalString="Merhabalar çift tırnak";
+//        console.log(normalString); // => Merhabalar çift tırnak
+
+//        let normalString2='Merhabalar tek tırnak';
+//        console.log(normalString2); // => Merhabalar tek tırnak
+
+          //ES6(Ecma Script 6): Daha kolay işlem yapmamıza olanak sağlar.(altgr+96 backtick kısayolu)
+//        let templateString=`Merhabalar backtick`;
+//        console.log(templateString); // => Merhabalar backtick
+// }
+// templateLiteralTutorials();
+
+// 1- Multi Line Template Literal
+// let templateLiteralTutorials= () => {
+          //escape characters: \n : yazıyı alt satıra yazar.
+//        let normalString = 'Merhabalar nasılsınız\nAlt satır';
+//        console.log(normalString); // => Merhabalar nasılsınız
+          //                               Alt satır
+
+          //ES6: backtick ile direk alt satıra yazmamız yeterlidir.
+//        let templateString = `Merhabalar nasılsınız
+// Alt satır`;
+//        console.log(templateString); // => Merhabalar nasılsınız
+          //                                 Alt satır
+// }
+// templateLiteralTutorials();
+
+// 2- Interpolation: değişken çağırmak için => `${}`
+// let templateLiteralInterpolation = () => {
+//        let adi = 'Hamit', soyadi = "Mızrak";
+//        console.log('Adı: '+adi+' Soyadi: '+soyadi); // => Adı: Hamit Soyadi: Mızrak
+
+//        console.log(`Adı: ${adi} Soyadı: ${soyadi}`);// => Adı: Hamit Soyadı: Mızrak
+// }
+// templateLiteralInterpolation();
+
+// 3- HTML Template
+// templateLiteralHtmlTemplate = () => {
+//        let adi = "Hamit",soyadi = "Mızrak";
+       //Çalışmadı bu kod!
+       // let html=`
+       // "<ul>"+
+       //        "<li>"+adi+"</li>"+
+       //        "<li>"+soyadi+"</li>"+
+       // "</ul>"
+       // `
+
+       //Çalışmadı bu kod!
+//        let html=`
+//        <ul>
+//               <li>${adi}</li>
+//               <li>${soyadi}</li>
+//        </ul>
+//        `
+
+//        document.body.innerHTML()=html;
+// }
+// templateLiteralHtmlTemplate();
+
+// Constructor-1
+// function student(adi, soyadi, meslek,dogumTarihi){
+       //this: Bu yapı demektir. Çalıştıracağımız şey ne ise onu çağırır.
+       //Bulunduğumuz objeyi çağırmak veya root dizini çağırmak
+//        this.adi = adi; //sağ taraftaki değerler functiondan gelen parametrelerdir.
+//        this.soyadi = soyadi;
+//        this.meslek = meslek;
+//        this.dogumTarihi = dogumTarihi;
+//        console.log(this); // student {adi: 'handan', soyadi: 'günaydın', meslek: 'mühendis', dogumTarihi: 1995}
+//        this.yas = function (){
+              //static tanımladık
+              //return 2022-dogumTarihi;
+              //dinamık çağırma
+//               return new Date().getFullYear() - dogumTarihi;
+//        }
+// }
+// let sonuc= new student("handan","günaydın","mühendis",1995);
+// console.log(sonuc); // => student {adi: 'handan', soyadi: 'günaydın', meslek: 'mühendis', dogumTarihi: 1995, yas: ƒ}
+// console.log(sonuc.yas()); // => 27
+
+// let thisTutorials= () => {
+       //this: bulunduğu function yapısını gösterir.
+//        console.log(this); //windows yapısını çağırır.(Bulunduğumuz pencere)
+//        let sayi= this;
+//        alert(sayi); // => [object Window]
+       // return this;
+// }      
+// thisTutorials();
+
+// let thisFunctionTutorials = () => {
+//        let person={
+//               adi: "handan",
+//               soyadi: "günaydın",
+//               adSoyad: function(){
+//                      return this.adi+" "+this.soyadi;
+//               }
+//        };
+//        console.log(person); // => {adi: 'handan', soyadi: 'günaydın', adSoyad: ƒ}
+//        console.log(person.adSoyad()); // => handan günaydın
+// }
+// thisFunctionTutorials();
+
+//Event: bir olaydan sonra meydana gelebilecek başka olaylar.
+
+function toplama(){
+       alert("onclick Alert");
+}
+//toplama();
+
+// let personTutorials = () => {
+//        let person = {
+//               adi: "Handan",
+//               soyadi: "Günaydın",
+//               yas: 27,
+//               meslek: "Mühendis"
+//        };
+//        console.log(person);
+// }
+// personTutorials();
+
+//onmouse
+//onkey
+//onchange
+//addEventListener
+
+// DOM
+// Dom: Javascript ile html veya css yapılarını yönetmeye denir.
+// Dom yapılarını çağırırken document sayfasında çalışıyoruz.
+// document: çalıştığımız html web sayfasıdır.
+
+// function changeParagraf(){
+//        alert("onclick alert");
+
+       //HTML
+       //ID'ye göre çağırma
+       //document.getElementById("paragraf_id").innerHTML="<b>Ben Dom'dan geldim</b>"; // => Ben Dom'dan geldim // html tag'ı olan b'yi görür ve paragrafı kalın yazar.
+       //document.getElementById("paragraf_id").innerText="<b>Ben Dom'dan geldim</b>"; // => <b>Ben Dom'dan geldim</b> // html tag'ını görmez,düz metinlerde kullanılır.
+       //document.getElementById("paragraf_id").innerHTML=Date(); // => Mon Mar 28 2022 01:43:51 GMT+0300 (GMT+03:00)
+
+       //NAME'e göre çağırma. [0]: bunu unutma! id dışında, diğerleri birden fazla olabilir o yüzden burda belirtmemiz gerekir.(elements: s takısı olanlarda vardır)
+       //document.getElementsByName("paragraf_name")[0].innerHTML="<b>Ben Dom'dan geldim</b>" // => Ben Dom'dan geldim
+
+       //CLASS'a göre çağırma
+       //document.getElementsByClassName("paragraf_class")[0].innerHTML="<b>Ben Dom'dan geldim</b>"; //=> Ben Dom'dan geldim
+
+       //Tag'e göre çağırma
+       //document.getElementsByTagName("p")[0].innerHTML="<b>Ben Dom'dan geldim</b>"; //=> Ben Dom'dan geldim
+// }
+
+// function changeParagraf(){
+        //id
+//        let valueParagraf=document.getElementById("paragraf_id");
+
+        //HTML bileşenleri ile değiştirme
+//        valueParagraf.innerHTML="<i>HTML</i>"
+
+        //CSS bileşenler ile değiştirme
+//        valueParagraf.style.color="blue";
+//        valueParagraf.style.fontSize="25px";
+//        valueParagraf.style.border="2px solid rgba(25,55,2,.8)";
+// }
+
+//DOM attributes
+//let sonuc=document.getElementsByTagName("a")[0].getAttribute("href");
+//querySelector: getElementsById'nin farklı bir yöntemidir. Ama class ile çalışacaksak başına ".", id ile çalışacaksak "#" koymalıyız.
+//let sonuc=document.querySelector("#a_id").getAttribute("href");
+//let sonuc=document.querySelector("#a_id").setAttribute("src","deneme.png");
+// alert(sonuc);
+// alert("deneme");
+
+//Bunlara bak!
+
+//callBackFunction
+
+//promise
+
+//listener
+
+
+
+
 
 
 

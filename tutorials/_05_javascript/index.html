@@ -30,9 +30,90 @@
         })
     });
     </script> -->
+    <style>
+      .cssAllDom {
+        width: 25%;
+        height: 200px;
+        background-color: brown;
+        color: blue;
+      }
+    </style>
   </head>
-  <body>
+  <body class="container">
     <!-- start codes  -->
+    <h2>Mouse Event Yapıları</h2>
+    <!-- onclick: üzerine bir kere tıklayınca verilen içerik gelir. -->
+    <!-- ondblclick: üzerine iki kere tıklayınca gelir. -->
+    <!-- onmousedown: mouse'a tıkladığın an gelir. -->
+    <!-- onmouseup: mouse'dan elimizi çektiğimiz an gelir. -->
+    <!-- onmouseover: mouse ile üzerine geldiğimiz an gelir. -->
+    <!-- onmouseleave: mouse ile üzerinden ayrıldığımız an gelir. -->
+    <button onclick="toplama()" class="btn btn-primary ml-3 mt-3">
+      onClick
+    </button>
+    <!-- <button onclick="personTutorials()" class="btn btn-primary ml-3 mt-3">
+      onclick/person
+    </button> -->
+    <button ondblclick="toplama()" class="btn btn-danger ml-3 mt-3">
+      ondblclick
+    </button>
+    <button onmousedown="toplama()" class="btn btn-success ml-3 mt-3">
+      onmousedown
+    </button>
+
+    <hr />
+    <br />
+
+    <h2>Klavye Event Yapıları</h2>
+    <!-- onkeydown: klavyede herhangi bir tuşa bastiğimiz zaman çalışan yapıdır. -->
+    <button onkeydown="toplama()" class="btn btn-danger ml-3 mt-3">
+      onkeydown
+    </button>
+
+    <hr />
+    <br />
+
+    <h2>Dom:</h2>
+    <!-- Dom: Javascript ile html veya css yapılarını yönetmeye denir. -->
+    <!-- Dom yapılarını çağırırken document sayfasında çalışıyoruz. -->
+    <!-- document: çalıştığımız html web sayfasıdır. -->
+    <p
+      id="paragraf_id"
+      name="paragraf_name"
+      class="paragraf_class text-primary"
+    ></p>
+
+    <button onclick="changeParagraf()" class="btn btn-success ml-3 mt-3">
+      Dom click
+    </button>
+
+    <hr />
+    <br />
+
+    <div id="div_dom">Trabzonspor</div>
+
+    <button onclick="changeDiv()" class="btn btn-primary ml-3 mt-3">
+      Div click
+    </button>
+
+    <script>
+      //js function'ı script içinde burda da tanımlayabiliriz
+      function changeDiv() {
+        let valueParagraf = document.getElementById("div_dom");
+        valueParagraf.classList.add("cssAllDom");
+      }
+    </script>
+
+    <hr />
+
+    <a id="a_id" href="https://www.techcareer.net/mainpage/en/" target="_blank"
+      >techcareer</a
+    >
+
+    <!-- <form action="">
+    <input type="radio" name="adi" id="x1"> JS <br>
+    <input type="radio" name="adi" id="x2"> Bootstrap <br>
+    </form> -->
 
     <!-- ends codes -->
 
