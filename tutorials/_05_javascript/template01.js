@@ -1102,10 +1102,33 @@ function toplama(){
 //onchange
 //addEventListener
 
-// DOM
+// DOM Nesneleri(document object model)
+// Tarayıcı bir Web sayfasını yüklendiğinde DOM nesnesini de oluşturur. Yüklenen DOM, belge için bir dizi düğüm ve nesne sunmaktadır. Düğümler ile ayrıca olaylar ve tetikleyiciler eklenebilir. Özetle programlama dilini WEB sayfasına bağlamak için kullanılır.
 // Dom: Javascript ile html veya css yapılarını yönetmeye denir.
 // Dom yapılarını çağırırken document sayfasında çalışıyoruz.
 // document: çalıştığımız html web sayfasıdır.
+
+// Html etiketleri üzerinde düzenleme yapmak için kullanılan bazı document metodları:
+// document.getElementById(id): id niteliği ile eşleşen ilk kaydı getirir.
+// document.getElementsByName(name): name niteliği ile eşleşen tüm kayıtları dizi olarak  getirir.
+// document.getElementsByTagName(etiketadı):etiket adı ile eşleşen tüm kayıtları dizi olarak getirir.
+// document.getElementsByClassName(classAdı):class niteliği ile eşleşen tüm kayıtları dizi olarak getirir.
+// document.querySelector(seçici): seçici ile eşleşen ilk kaydı getirir.
+// document.querySelectorAll(seçici): seçici ile eşleşen tüm kayıtları dizi olarak getir.
+
+// Document özellikleri ile de HTML nesnelerine liste olarak erişebilirsiniz. HTML belgesindeki nesneleri dizi listesi olarak çeker.
+// document.anchors  ⇨ Sayfadaki tüm bağlantıları erişmek için kullanılır.
+// document.body  ⇨Body nesnesine ulaşmak için kullanılır
+// document.documentElement ⇨HTML kökünden itibaren tüm dökümana ulaşmak için kullanılır.
+// document.embeds ⇨ eklentilere ulaşmak için kullanılır.
+// document.forms ⇨ Sayfadaki formlara ulaşmak için kullanılır.
+// document.head ⇨ head etiketine ulaşmak için kullanılır.
+// document.images ⇨Sayfadaki resimlere ulaşmak için
+// document.links ⇨ Sayfadaki linklere ulaşmak için kullanılır.(a href olan nesneler)
+// document.scripts ⇨ Sayfada yüklenen Script dosyalarına ulaşmak için kullanılır.
+// document.title ⇨ Sayfa başlığına ulaşmak için kullanılır.
+// Not: body, head, documentElement, title tek bir nesneyi döndürür. 
+// Diğerleri nesnelerden oluşan bir dizi döndürür.
 
 // function changeParagraf(){
 //        alert("onclick alert");
@@ -1139,13 +1162,26 @@ function toplama(){
 //        valueParagraf.style.border="2px solid rgba(25,55,2,.8)";
 // }
 
+// Bunu .html dosyasında da yazabiliriz.(script içinde)
+// function changeDiv() {
+//        let valueParagraf = document.getElementById("div_dom");
+//        valueParagraf.classList.add("cssAllDom"); // classList: sınıf ekleme,silme veya geçiş efekti ekleyebilir. // add: ekleme
+//        valueParagraf.classList.add("cssAllDomHover"); // hover özelliği ekledim
+// }
+
 //DOM attributes
+// getAttribute() metodu: html öğesinin bir niteliğinin değerini alabiliriz.
+// çalışmadı bu kısım!
 //let sonuc=document.getElementsByTagName("a")[0].getAttribute("href");
-//querySelector: getElementsById'nin farklı bir yöntemidir. Ama class ile çalışacaksak başına ".", id ile çalışacaksak "#" koymalıyız.
-//let sonuc=document.querySelector("#a_id").getAttribute("href");
-//let sonuc=document.querySelector("#a_id").setAttribute("src","deneme.png");
-// alert(sonuc);
+// querySelector: getElementsById'nin farklı bir yöntemidir. Ama class ile çalışacaksak başına ".", id ile çalışacaksak "#" koymalıyız.
+// let sonuc=document.querySelector("#a_id").getAttribute("href");
+
+// setAttributes() metodu: Html öğesine yeni bir nitelik ekleyebilir ve bu niteliğe istediğimiz değeri verebiliriz. 
+// çalışmadı bu kısım!
+// let sonuc=document.querySelector("#a_id").setAttribute("src","deneme.png");
+//alert(sonuc);
 // alert("deneme");
+
 
 //Bunlara bak!
 
@@ -1154,54 +1190,4 @@ function toplama(){
 //promise
 
 //listener
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

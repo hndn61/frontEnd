@@ -530,67 +530,130 @@ ifade olarak geri döndürür. Varsayılan olarak dizi öğeleri string ile ayr�
 //emeklilik=function(age){return 2022-age} ==> yaş<18 yaş>=150 (validation)
 //String toUppercase vs.
 
-let cvObject= () => {
-    let kisiselBilgiler = {
-        adi: (prompt("Ad: ")),
-        soyadi: (prompt("Soyad: ")),
-        yas: (Number(prompt("Yaş: "))),
-    };
-    let iletisimBilgiler = {
-        cepNo: (Number(prompt("Cep No: "))),
-        email: prompt("Mail: ")
-    };
-    let egitimBilgileri = {
-        universite: (prompt("Üniversite Adı: ")),
-        bolum: (prompt("Bölüm Adı: ")),
-        baslangicYili: (Number(prompt("Başlangıç Yılı: "))),
-        bitisYili: (Number(prompt("Bitiş Yılı:")))
-    };
-    let diller= new Array();
-    let dilSayisi= Number(prompt("Kaç dil bilgisi girmek istersiniz: "));
-    for(let i=0; i<dilSayisi; i++){
-        diller[i]=prompt((i+1)+".dil: ");
-    }
-    let meslekBilgisi={
-        meslek: (egitimBilgileri.bolum),
-        meslekBasYili: Number(prompt("İşe Giriş Yılı: ")),
-        meslekBitisYili: Number(prompt("İşten Çıkış Yılı: "))
-    };
-    let zaman= new Date();
-    let emeklilik = {
-        cinsiyet: prompt("Cinsiyetinizi giriniz(K/E):"),
-        dogumYili: function(par1,par2){
-                return par1-par2;
-        },
-        calismaSuresi: function(para1,para2){
-                return para1-para2;
-        },
-        emeklilikHesaplama: function(calismaS,yasB,cinsiyet){
-                if(cinsiyet === "K"){
-                        if(yasB >= 54 && calismaS >= 15){
-                                return "Emekli olabilirsiniz...";
-                        }
-                        else{
-                                return "Emekli olamazsınız...";
-                        }
-                }else{
-                        if(yasB >= 55 && calismaS >= 15){
-                                return "Emekli olabilirsiniz...";
-                        }
-                        else{
-                                return "Emekli olamazsınız...";
-                        }
-                }
-        }
-    };
-    console.log(kisiselBilgiler);
-    console.log(iletisimBilgiler);
-    console.log(egitimBilgileri);
-    console.log(diller);
-    console.log(meslekBilgisi);
-    console.log(emeklilik);
-    console.log(emeklilik.dogumYili(zaman.getFullYear(),kisiselBilgiler.yas));
-    console.log(emeklilik.calismaSuresi(meslekBilgisi.meslekBitisYili,meslekBilgisi.meslekBasYili));
-    console.log(emeklilik.emeklilikHesaplama(emeklilik.calismaSuresi,egitimBilgileri.yas,emeklilik.cinsiyet));
+// let cvObject= () => {
+//     let kisiselBilgiler = {
+//         adi: (prompt("Ad: ")),
+//         soyadi: (prompt("Soyad: ")),
+//         yas: (Number(prompt("Yaş: "))),
+//     };
+//     let iletisimBilgiler = {
+//         cepNo: (Number(prompt("Cep No: "))),
+//         email: prompt("Mail: ")
+//     };
+//     let egitimBilgileri = {
+//         universite: (prompt("Üniversite Adı: ")),
+//         bolum: (prompt("Bölüm Adı: ")),
+//         baslangicYili: (Number(prompt("Başlangıç Yılı: "))),
+//         bitisYili: (Number(prompt("Bitiş Yılı:")))
+//     };
+//     let diller= new Array();
+//     let dilSayisi= Number(prompt("Kaç dil bilgisi girmek istersiniz: "));
+//     for(let i=0; i<dilSayisi; i++){
+//         diller[i]=prompt((i+1)+".dil: ");
+//     }
+//     let meslekBilgisi={
+//         meslek: (egitimBilgileri.bolum),
+//         meslekBasYili: Number(prompt("İşe Giriş Yılı: ")),
+//         meslekBitisYili: Number(prompt("İşten Çıkış Yılı: "))
+//     };
+//     let zaman= new Date();
+//     let emeklilik = {
+//         cinsiyet: prompt("Cinsiyetinizi giriniz(K/E):"),
+//         dogumYili: function(par1,par2){
+//                 return par1-par2;
+//         },
+//         calismaSuresi: function(para1,para2){
+//                 return para1-para2;
+//         },
+//         emeklilikHesaplama: function(calismaS,yasB,cinsiyet){
+//                 if(cinsiyet === "K"){
+//                         if(yasB >= 54 && calismaS >= 15){
+//                                 return "Emekli olabilirsiniz...";
+//                         }
+//                         else{
+//                                 return "Emekli olamazsınız...";
+//                         }
+//                 }else{
+//                         if(yasB >= 55 && calismaS >= 15){
+//                                 return "Emekli olabilirsiniz...";
+//                         }
+//                         else{
+//                                 return "Emekli olamazsınız...";
+//                         }
+//                 }
+//         }
+//     };
+//     console.log(kisiselBilgiler);
+//     console.log(iletisimBilgiler);
+//     console.log(egitimBilgileri);
+//     console.log(diller);
+//     console.log(meslekBilgisi);
+//     console.log(emeklilik);
+//     console.log(emeklilik.dogumYili(zaman.getFullYear(),kisiselBilgiler.yas));
+//     console.log(emeklilik.calismaSuresi(meslekBilgisi.meslekBitisYili,meslekBilgisi.meslekBasYili));
+//     console.log(emeklilik.emeklilikHesaplama(emeklilik.calismaSuresi,egitimBilgileri.yas,emeklilik.cinsiyet));
+// }
+// cvObject();
+
+///////////// ÖDEV5 /////////////////
+// 1- div bölmesine hover özelliği ekleme:
+/* <script>
+function changeDiv() {
+    let valueParagraf = document.getElementById("div_dom");
+    valueParagraf.classList.add("cssAllDom"); // classList: sınıf ekleme,silme veya geçiş efekti ekleyebilir. // add: ekleme
+    valueParagraf.classList.add("cssAllDomHover"); // yeni bir sınıfla hover özelliği ekledim
 }
-cvObject();
+</script> */
+/* <style>
+.cssAllDomHover:hover {
+    width: 25%;
+    height: 200px;
+    background-color: blue;
+    color: brown;
+}
+</style> */
+
+//callBackFunction(geri çağırma)
+// Callback, en basit haliyle herhangi bir fonksiyona parametre olarak 
+// verdiğimiz ve sonra geri çağıracağımız fonksiyonlara denir. 
+// İstenilen değere ulaştığında veya işlem sonlandığında görevini yerine 
+// getirir. 
+// Şöyle düşünün bir web sitesi yapıyorsunuz varsayın. 
+// Önce front end developerlar çalışmasını bitirir ardından back end 
+// developerlar çalışmaya başlar. Bu bir callback işlemidir.callback funcitonları
+// asenkron olarak icra edilir.
+// Asenkronik yapı içerisinde callback function kilit noktadır. 
+// Callback function başka bir fonksiyonun çalışmasını tamamladıktan 
+// sonra , bir başka fonksiyonun işlevini başlatır.
+// Javascript’de senkronik yapı gereği kodlar sıralı bir şekilde işleve konur. 
+// Fonksiyonlar sırayla birbiri ardına işlemlerini gerçekleştirir.
+// Asenkronik yapı içerisinde fonksiyonlar çağırılmak için herhangi bir fonksiyonun 
+// bitmesini veya başka bir işlevin tamamlanmasını beklemez.
+
+//promise(söz verme)
+// Bir JavaScript Promise henüz tamamlanmamış ancak gelecekte belli bir noktada 
+// gerçekleşecek bir işlemin sonucunu temsil eder.
+// Promise constructor kullanılarak bir Promise oluşturulur. Bu, tek parametresi 
+// olarak iki bağımsız değişkeni (resolve & reject) içeren bir işlevi 
+// kabul eder.
+// resolve(): diğer işleme git
+// reject(): hata yakala
+// İşlev içinde, istediğimiz asenkron görevi gerçekleştirebiliriz. 
+// Promise yerine getirilmiş olarak işaretlemek için, isteğe bağlı 
+// olarak döndürmek istediğimiz bir değeri ileterek resolve() işlevini 
+// kullanırız. Promise reddedildi veya başarısız olarak işaretlemek için,
+// isteğe bağlı olarak bir hata mesajı iletecek reject() öğesini çağırırız.
+// Bir promise yerine getirilmeden veya reddedilmeden önce bekleme 
+// durumundadır.
+
+//listener
+// JavaScript addEventListener yöntemi, bir kullanıcı bir düğmeyi tıkladığında 
+// olduğu gibi, belirli bir olay gerçekleştiğinde çağrılacak işlevleri 
+// ayarlamanıza olanak tanır. Olaylar, kullanıcı veya tarayıcı bir sayfayı
+// manipüle ettiğinde gerçekleşen eylemlerdir. Örneğin, tarayıcı bir 
+// belgeyi yüklemeyi bitirdiğinde bir load olayı, bir kullanıcı bir 
+// sayfadaki bir düğmeyi tıklarsa, bir click olayı gerçekleşmiş olur.
+// JavaScript, addEventListener yöntemi bir olay işleyicisi sağlar. 
+// Bu işleyici, olayları izlemek istediğiniz belirli bir HTML öğesine 
+// eklenebilir.
+

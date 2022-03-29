@@ -38,6 +38,14 @@
         color: blue;
       }
     </style>
+    <style>
+      .cssAllDomHover:hover {
+        width: 25%;
+        height: 200px;
+        background-color: blue;
+        color: brown;
+      }
+    </style>
   </head>
   <body class="container">
     <!-- start codes  -->
@@ -100,20 +108,43 @@
       //js function'ı script içinde burda da tanımlayabiliriz
       function changeDiv() {
         let valueParagraf = document.getElementById("div_dom");
-        valueParagraf.classList.add("cssAllDom");
+        valueParagraf.classList.add("cssAllDom"); // classList: sınıf ekleme,silme veya geçiş efekti ekleyebilir. // add: ekleme
+        valueParagraf.classList.add("cssAllDomHover"); // yeni bir sınıfla hover özelliği ekledim
       }
     </script>
 
     <hr />
 
-    <a id="a_id" href="https://www.techcareer.net/mainpage/en/" target="_blank"
+    <!-- techcareer sayfasına link verdik -->
+    <a
+      id="a_id"
+      class="a_class"
+      href="https://www.techcareer.net/mainpage/en/"
+      target="_blank"
       >techcareer</a
     >
+    <script>
+      // getAttribute(): html öğesinin bir niteliğinin değerini alabiliriz.
+      let result = document.getElementById("a_id");
+      console.log(result.getAttribute("href")); // => https://www.techcareer.net/mainpage/en/
+      // let result = document.getElementsByTagName("a")[0];
+      // console.log(result.getAttribute("href")); // => https://www.techcareer.net/mainpage/en/
+      // let result = document.getElementsByClassName("a_class")[0];
+      // console.log(result.getAttribute("href")); // => https://www.techcareer.net/mainpage/en/
 
-    <!-- <form action="">
-    <input type="radio" name="adi" id="x1"> JS <br>
-    <input type="radio" name="adi" id="x2"> Bootstrap <br>
-    </form> -->
+      // setAttributes() metodu: Html öğesine yeni bir nitelik ekleyebilir ve bu niteliğe istediğimiz değeri verebiliriz.
+      let result1 = document.getElementById("a_id");
+      result1.setAttribute(
+        "href",
+        "https://besthqwallpapers.com/tr/download/original/67518"
+      );
+      console.log(result1); //=> <a id="a_id" class="a_class" href="https://besthqwallpapers.com/tr/download/original/67518" target="_blank">techcareer</a>
+    </script>
+
+    <form action="">
+      <input type="radio" name="adi" id="x1" /> JS <br />
+      <input type="radio" name="adi" id="x2" /> Bootstrap <br />
+    </form>
 
     <!-- ends codes -->
 
