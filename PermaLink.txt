@@ -1,0 +1,15 @@
+Html5 Tutorial ==> https://www.w3schools.com/html/
+
+Emmet Documentation ==> https://docs.emmet.io/
+
+Codepen ==> https://codepen.io/
+
+Google font ==> https://fonts.google.com/
+
+FontAwesome ==> https://fontawesome.com/
+
+Icons Tutorial ==> https://www.w3schools.com/icons/default.asp
+
+https://github.com/hamitmizrak/TechCareerNetFrontEnd
+
+https://github.com/hamitmizrak/techcareer_blog_project

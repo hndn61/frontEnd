@@ -1,0 +1,228 @@
+<!-- html5:Ctrl+K+C:Yorum satırı kısayolu -->
+<!DOCTYPE html>  <!-- dokuman türü-->
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8" /> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="html5, css3, js, jquery, bootstrap, es, react"/>
+        <meta name="author" content="Handan Günaydın"/>
+        <title>Html5 Dersleri</title>
+        <!-- başlığın yanındaki icon resmi -->
+        <link
+           rel="shortcut icon"
+           type="image/x-icon"
+           href="../img/resim1.jpg"
+        />
+    </head>
+        <!-- code start -->
+
+        <!-- Heading: Başlık elementi.Büyükten küçüğe doğru 6 başlık türü. -->
+        <h1>heading-1</h1>
+        <h2>heading-2</h2>
+        <h3>heading-3</h3>
+        <h4>heading-4</h4>
+        <h5>heading-5</h5>
+        <h6>heading-6</h6>
+        <br /> <!-- satır atlama -->
+        <hr /> <!-- baştan sona uzun bir çizgi çizme -->
+
+        <!-- paragraf -->
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, ab.
+            Quibusdam sapiente error provident unde.
+        </p>
+        <hr />
+
+        <span>inline</span> 
+        <span>deneme1</span>
+        <span>deneme2</span>
+        <!-- span inline elementidir ve aynı satırda yazmaya yarar. -->
+        <!-- span elementini local olarak bir şey değiştirmek isterken de kullanırız. -->
+        <hr />
+        
+        <!-- web sayfasını bölümlere ayırma -->
+        <div style="border: 2px solid red; height: 100px; width: 25%; float: left;">
+         block: alt satıra geçer
+        </div> 
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        <!-- html formatter -->
+        <b>bold text(kalın yazı)</b> <br />
+        <i>italic</i> <br />
+        <!-- <big>big</big> <br /> -->
+        <small>small</small> <br />
+        <strong>strong(important text)</strong> <br />
+        <em>vurgulu(emphasized)</em> <br />
+        <code>System.out.printIn("Deneme");</code> <br />
+        log<sub>3</sub>n <br />  
+        25<sup>2</sup> <br />
+        <del>1000</del>TL 999 TL <br />
+        <mark>fosforlu kalem</mark> <br />
+        <!-- ul unordered list(sırasız liste) -->
+        <!-- ul>li{item $}*5 (emmet.io ile daha hızlı ve düzenli yazılar yazılır.)-->
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+        </ul>
+        <br />
+
+        <!-- ol ordered list(sıralı liste) -->
+        <ol start="1" type="I">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+        </ol>
+        <br />
+
+        <!-- images -->
+        <img 
+            src="../img/resim1.jpg"
+            width="55%"
+            alt="resim yok"
+
+        />
+        <br />
+        <br />
+
+        <!-- <a> : link ekleme -->
+        <a href="https://www.techcareer.net/" target="_blank">Clinck Me</a>
+        <!-- _blank: bağlantıyı yeni sekmede açar. -->
+        <br />
+        <br />
+
+        <!-- tablo oluşturma -->
+        <!-- table>(thead>tr>th{item &}*3)+(tbody>tr>td{item $}*3)+(tfoot>tr>th{item $}*1)-->
+        <table border="1">
+            <!-- başlık kısmı -->
+            <thead>
+                <tr>
+                    <th>FrontEnd</th>
+                    <th>BackEnd</th>
+                    <th>Database</th>
+                </tr>
+            </thead>
+            <!-- içerik kısmı -->
+            <tbody>
+                <tr>
+                    <td>Html5</td>
+                    <td>Css</td>
+                    <td>JavaScript</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Django</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <!-- colspan: sütun birleştirme -->
+                    <!-- rowspan: satır birleştirme -->
+                    <th colspan="3">&copy; Bütün haklar saklıdır.</th>
+                </tr>
+            </tfoot>
+        </table>
+        <br />
+        <br />
+
+        <!-- video elementi -->
+        <video width="320" height="240" controls>
+            <source src="movie.mp4" type="video/mp4" />
+            <source src="movie.ogg" type="video/ogg" />
+            Your browser does not support the video tag.
+        </video>
+        <br />
+
+        <!-- ses dosyası -->
+        <audio controls>
+            <source src="horse.ogg" type="audio/ogg" />
+            <source src="horse.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+        <br />
+
+        <!-- form elementleri -->
+        <!-- 
+            input
+            select
+            textarea
+            button
+            datalist
+        -->
+        <h1>Form</h1>
+
+        <form action="#" method="get" autocomplete="true"> 
+            <!-- method elementinde get seçersek yazılan veriler gözükür, post seçersek gözükmez.-->
+            <!-- id ile for içindeki aynı olmalı! --> 
+            <!-- autocomplete: daha önceden girilen bilgileri kaydeder ve gerektiğinde doldururken önümüze otomatik çıkartır. Bilgileri hatırlar. -->
+            <label for="ad-soyad">Ad-Soyad:</label><br />
+            <input
+                type="text"
+                id="ad-soyad"
+                placeholder="ad-soyad giriniz"
+                autofocus
+                required
+            />
+            <br /><br />
+            <label for="email">Email:</label><br />
+            <input
+                type="email"
+                id="email" 
+                placeholder="email adresi giriniz"
+                required
+            />
+            <br /><br />
+            <label for="şifre">Şifre:</label><br />
+            <input
+                type="password"
+                id="şifre"
+                placeholder="şifre giriniz"
+                required
+            />
+            <!-- autofocus: input elementidir ve sayfa yenilendiğinde mause imlecinin nerde başlayacağını belirtir. -->
+            <!-- required: input elementidir ve formdaki alanın boş geçilmemesini sağlar. -->
+            <!-- 
+                placeholder: input elementidir ve formun arka planına silik şekilde istenilen verinin yazılmasını söyler.
+                Valueden farkı arkadaki yazıyı silmeden üzerine otomatik yazılır. 
+            -->
+            <br /><br />
+
+            <!-- checkbox: bir kutu içine tik atma işlevi -->
+            <!-- Aşağıdaki şekilde yazarsak checkbox kutularının ikiside aynı anda işaretlenebilir, çünkü name bileşenleri farklıdır. -->
+            Java:<input type="checkbox" name="readme1" id="readme1"/><br >
+            Mysql:<input type="checkbox" name="readme2" id="readme2"/><br />
+            <br /><br />
+
+            <!-- html,css ve javascript dillerinden favori olarak birini seçebilir, çünkü name bileşenleri aynıdır. -->
+            <input type="radio" id="html" name="fav_language" value="HTML"/>
+            <label for="html">HTML</label><br />
+
+            <input type="radio" id="css" name="fav_language" value="CSS"/>
+            <label for="css">CSS</label><br />
+
+            <input type="radio" id="javascript" name="fav_language" value="JAVASCRİPT"/>
+            <label for="javascript">JAVASCRİPT</label><br />
+
+            <button type="reset">Temizle</button>
+            <input type="submit" value="Gönder"/>
+            <!-- submit: üzerine basınca referans verdiğimiz(action=#) dosyaya yukarıdaki bigileri gönderir. -->
+            <!-- reset: yazılanları sıfırlar -->
+        </form>
+        <!-- "<" ">" simgelerini yazarlar.(başka özel karakterlerde vardır bak!)-->
+        &lt; &gt;
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <!-- code end -->
+    </body>
+</html>
+
