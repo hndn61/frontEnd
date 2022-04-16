@@ -100,7 +100,7 @@ var root = document.getElementById("root");
   // this.adi=adi;
   // this.soyadi=soyadi;
   // this.yas=yas;
-  //console.log(this); // => StudentFunction {adi: 'handan', soyadi: 'günaydın', yas: 27}
+  //console.log(this);
 //}
 
 //instance(new)
